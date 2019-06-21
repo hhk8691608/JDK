@@ -1,0 +1,4 @@
+该小节是对过滤器流的介绍
+1.inputStream和outputStream是相当原始的类，偏底层,读取单位都是字节，为了方便操作，可以通过嵌套过滤器流完成不同转换
+2.过滤器串联起来，如: DataOutputStream dout = new DataOutputStream(new BufferedOutputStream(new FileOutputStream("data.txt")));
+3.除了最后一个过滤器的引用，你都不可以，不应该通过其他过滤器来读写数据
