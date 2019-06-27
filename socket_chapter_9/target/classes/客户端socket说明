@@ -1,0 +1,17 @@
+客户端socket
+setSoTimeout ---》》设置请求超时时间
+shutdownInput() --->>半关闭socket的输入流
+shutdownOutput() --->>半关闭socket的输出流
+isInputShutdown()--->>是否是关闭输入流
+isOutputShutdown()--->>是否是关闭输出流
+Socket(String host,int port) --->>基本构造函数
+Socket(InetAddress host,int port) --->>基本构造函数
+Socket() --->>构造函数获取更大的控制权对底层socket
+Socket(Proxy proxy) --->>构造函数获取更大的控制权对底层socket
+Socket(SocketImpl impl) --->>构造函数获取更大的控制权对底层socket
+获取socket信息
+IntetAddress getInetAddress()  --->> 远程主机
+int getPort() --->> 端口 
+IntetAddress getLocalAddress()  ---》》网络接口
+int getLocalPort()  ---》》  网络端口
+isClose() ---->> socket是关闭返回true

@@ -1,0 +1,21 @@
+基本API:
+ServerSocket(int port);
+ServerSocket(int port,int queueLength);
+ServerSocket(int port,int queueLength,InetAddress bindAddress)
+ServerSocket()
+--->>
+ queueLength:保存入站链接请求所用的队列的长度
+ 
+ 构造但不绑定端口
+ --->>>
+ bind(SocketAddress endpoint)
+ bind(SocketAddress endpoint,int queueLength)
+ eg:
+ ServerSocket ss = new ServerSocket();
+ SocketAddress http = new InetSocketAddress(80);
+ ss.bind(http);
+ 
+ 获取服务器socket信息:
+ public InetAddress getInetAddress(); --->>返回服务器使用的地址。
+ 
+ 
