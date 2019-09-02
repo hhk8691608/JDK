@@ -34,5 +34,12 @@
   
  <modules>
  	<module>socket_chapter_2</module>
- </modules>
+    <module>socket_chapter_4</module>
+    <module>socket_chapter_8</module>
+    <module>socket_chapter_9</module>
+    <module>socket_chapter_12</module>
+    <module>socket_netty</module>
+    <module>Spring</module>
+    <module>JDK8</module>
+  </modules>
 </project>
