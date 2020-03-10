@@ -57,7 +57,7 @@ public class LambdaMethodRef {
 	@Test
 	public void test4() {
 		
-		BiPredicate<String,String> bp = (x,y) -> x.equals(y);
+		BiPredicate<String,String> bp = (x, y) -> x.equals(y);
 		BiPredicate<String,String> bp2 = String::equals;
 		
 		boolean isFlat = bp2.test("a", "d");

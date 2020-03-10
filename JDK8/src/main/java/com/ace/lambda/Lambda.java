@@ -1,11 +1,13 @@
 package com.ace.lambda;
 
 import java.util.Comparator;
+import java.util.function.BinaryOperator;
 import java.util.function.Consumer;
 
-import org.junit.Test;
 
 import com.ace.lambda.inter.MapRduce;
+import com.ace.lambda.inter.MyFun;
+import org.junit.Test;
 
 /**
  * 
@@ -48,8 +50,6 @@ public class Lambda {
 	
 	@Test
 	public void test1() {
-		
-		
 		Runnable r = new Runnable() {
 
 			@Override
@@ -106,12 +106,86 @@ public class Lambda {
 	public Integer operation(Integer num,MapRduce mapduce) {
 		return mapduce.getValue(num);
 	}
-	
-	
-	
-	
-	
-	
+
+
+
+
+	@Test
+	public void test6() {
+		int num = 11;
+		Runnable r = () -> System.out.println("hello Lambda !! "+ num  );
+		r.run();
+
+	}
+
+	@Test
+	public void test7() {
+
+		Consumer<String> con = (e) -> System.out.println(e);
+		con.accept("hello world !! ");
+
+	}
+
+
+	@Test
+	public void test8() {
+
+		Consumer<String> con = x -> System.out.println(x);
+		con.accept("hello world !! ");
+
+	}
+
+
+	@Test
+	public void test9() {
+
+		Comparator<Integer> bo = (x,y) -> {
+			System.out.println("实现函数接口方法 !! ");
+			return Integer.compare(x,y);
+		};
+		Integer s = bo.compare(100,25);
+		System.out.println("s = "+s);
+
+	}
+
+
+	@Test
+	public void test10() {
+
+		Comparator<Integer> bo = (x,y) ->  Integer.compare(x,y);
+		Integer s = bo.compare(100,225);
+		System.out.println("s = "+s);
+
+	}
+
+
+	@Test
+	public void test11() {
+
+		Comparator<Integer> bo = (Integer x,Integer y) ->  Integer.compare(x,y);
+		Integer s = bo.compare(100,225);
+		System.out.println("s = "+s);
+
+	}
+
+
+	@Test
+	public void test12() {
+		Integer num = 1000;
+		Integer value = getParement(num,x -> x+200 );
+		System.out.println("num = "+ value);
+	}
+
+	@Test
+	public void test13() {
+		Integer num = 1000;
+		MyFun myFun = (x) -> x+1000;
+		System.out.println("num = "+ myFun.getValue(num));
+	}
+
+	private Integer getParement(Integer num , MyFun myFun){
+		return myFun.getValue(num);
+	}
 	
 
 }
